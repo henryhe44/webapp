@@ -1,2 +1,9 @@
 # app
-Start of CTP Project. We can put proposal here.
+Project Arena created in collaboration with CUNY Tech Prep. 
+
+Participants: 
+-Ming Yang
+-Henry He
+-Glyne Gittens
+-Gregory Szymanski
+
