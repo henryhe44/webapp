@@ -1,5 +1,6 @@
 class User {
-  String name;
+  String first_name;
+  String last_name;
   String email;
   String password;
   int id_user;
@@ -14,28 +15,37 @@ class Gamer extends User {
   Gamer[] friends_list;
   Gamer[] block_list;
   GeoPoint geolocation;
-  Profile profile;
+  Profile[] game_profiles;
 }
 
 class Admin extends User {}
 
 class Profile {
-  LookingTo activities;
+  DesiredRole activities;
+  Attitude degree_competitive;
   Availability availability;
   String summary;
   int id_profile;
 }
 
-class GamerProfile extends Profile {
+class GameProfile extends Profile {
   Rating rating;  // each game will have a different rating class
   String in_game_name;
-
+  Game name;
 }
 
-class LookingTo {
+class DesiredRole {
   bool teach;
   bool learn;
   bool compete;
+}
+
+class Attitude {
+  int attitude;
+
+  static int casual = 0;
+  static int in-between = 1;
+  static int competitive = 2;
 }
 
 class Availability {
@@ -104,7 +114,8 @@ class Session {
 }
 
 class Conversation {
-
+  Message[] chatlog;
+  Gamers[] users_involved;
 }
 
 class Message {
