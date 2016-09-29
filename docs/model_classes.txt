@@ -1,0 +1,116 @@
+class User {
+  String name;
+  String email;
+  String password;
+  int id_user;
+  Session session;
+  bool is_admin;
+}
+
+class Gamer extends User {
+  String username;
+  bool is_online;
+  Game[] games_played;
+  Gamer[] friends_list;
+  Gamer[] block_list;
+  GeoPoint geolocation;
+  Profile profile;
+}
+
+class Admin extends User {}
+
+class Profile {
+  LookingTo activities;
+  Availability availability;
+  String summary;
+  int id_profile;
+}
+
+class GamerProfile extends Profile {
+  Rating rating;  // each game will have a different rating class
+  String in_game_name;
+
+}
+
+class LookingTo {
+  bool teach;
+  bool learn;
+  bool compete;
+}
+
+class Availability {
+  bool weekday_morning;
+  bool weekday_afternoon;
+  bool weekday_evening;
+  bool weekend_morning;
+  bool weekend_afternoon;
+  bool weekend_evening;
+}
+
+class Privacy {
+  static int public = 1;
+  static int private = 2;
+  static int friends = 3;
+
+  int games_played;
+  int activities;
+  int summary;
+  int rating;
+  int in_game_name;
+}
+
+class GroupProfile extends Profile {
+  int size;
+  Set<Gamer> members;
+  String banner;
+}
+
+class Games {
+  int count;
+  Set<Game> list;
+}
+
+class Game {
+  String name;
+  int player_count; // number of Gamers who play this game
+  Genre genre;
+  String logo;
+}
+
+class Genre {
+  int genre;
+
+  static int MOBA = 0;
+  static int FPS = 1;
+  static int RTS = 2;
+  static int MMORPG = 3;
+  // any additional genres can be added as needed
+}
+
+class Groups {
+  String[] group_tags;
+}
+
+class SearchBar {
+  String to_search;
+  bool is_casual;
+  Game currently_playing;
+}
+
+class Session {
+  bool is_online;
+  Time logged_on;
+  Cookies user_cookies;
+}
+
+class Conversation {
+
+}
+
+class Message {
+  Date date;
+  Time time;
+  String message;
+  Gamer from;
+  Gamer to;
+}
