@@ -2,7 +2,8 @@ const chai = require('chai');
 const mocha = require('mocha');
 const chaiHttp = require('chai-http');
 const express = require('express');
-const server = ;
+
+const server = express();
 chai.use(chaiHttp);
 
 describe('index', function(){
