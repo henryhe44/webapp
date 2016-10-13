@@ -20,3 +20,4 @@ app.set('views', `${__dirname}/views/`);
 app.use(require('./controllers/'));
 
 app.listen(8000);
+module.exports = app;
