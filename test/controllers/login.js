@@ -3,7 +3,7 @@ const mocha = require('mocha')
 const chaiHttp = require('chai-http')
 const express = require('express')
 
-const server = express() // should require('../../server/app')
+const server = require('../../app')
 chai.use(chaiHttp)
 
 describe('login', function(){

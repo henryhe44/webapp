@@ -3,7 +3,7 @@ const mocha = require('mocha')
 const chaiHttp = require('chai-http')
 const express = require('express')
 
-const Profile = require('../../server/models/profile')
+const Profile = require('../../models/profile')
 const server = require('../../app')
 chai.use(chaiHttp)
 
