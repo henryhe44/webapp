@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const exphbs = require('express-handlebars');
+const pug = require('pug');
 const express = require('express');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
@@ -8,11 +8,7 @@ const methodOverride = require('method-override');
 
 const app = express();
 
-app.engine('handlebars', exphbs({
-  layoutsDir: './views',
-  defaultLayout: 'main',
-}));
-app.set('view engine', 'handlebars');
+app.set('view engine', 'pug');
 app.set('views', `${__dirname}/views/`);
 // app.get('/', (req, res) => {
 //   res.send("This is the home page");
