@@ -1,0 +1,32 @@
+.container
+  form(role='form')
+    hr
+    .row
+      - var gridformat = ['col-xs-4', 'col-xs-offset-2', 'col-md-4', 'col-md-offset-2', 'col-lg-4', 'col-lg-offset-2']
+      div(class=gridformat)
+        var form_classes = ['form-control input-lg']
+        .form-group
+          input#first_name(class=form_classes, type='text',
+            name='first_name', placeholder='First Name' tabindex='1')
+      - gridformat = ['col-s-4', 'col-md-4', 'col-lg-4']
+      div(class=gridformat)
+        .form-group
+          input#last_name(class=form_classes, type='text',
+            name='last_name' placeholder='Last Name' tabindex='2')
+    .row
+      - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
+      div(class=gridformat)
+        .form-group
+          input#email(class=form_classes, type='text',
+            name='email', placeholder='Email Address', tabindex='3')
+    .row
+      div(class=gridformat)
+        .form-group
+          input#password(class=form_classes, type='text',
+            name='password', placeholder='Password', tabindex='4')
+    hr
+    div.row
+      - var center_submit = ['col-xs-2', 'col-xs-offset-5', 'col-md-2', 'col-md-offset-5', 'col-lg-2', 'col-lg-offset-5']
+      div(class=center_submit)
+        - var buttons = ['btn', 'btn-primary', 'btn-block', 'btn-lg']
+        input(class=buttons, type='submit', value='Register', tabindex='5')
