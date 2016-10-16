@@ -1,0 +1,24 @@
+
+{
+  "development": {
+    "username": "arena",
+    "password": "password",
+    "database": "arena_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "arena",
+    "password": "password",
+    "database": "arena_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "arena",
+    "password": "password",
+    "database": "arena_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
