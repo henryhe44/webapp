@@ -1,6 +1,6 @@
 # Project Arena
-A web application that aims to connect gamers with others looking to socialize. <br />
-A project created in collaboration with CUNY Tech Prep.
+ProjectArena is a web application aspiring to create a social platform for gamers looking to socialize and is created in collaboration with CUNY Tech Prep!
+
 
 ###Participants: <br />
 * Ming Yang <br />
