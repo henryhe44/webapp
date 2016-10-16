@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
 	})
 
 	// Sync and create two test users
-	User.sync({force: true}).then(function() {
+	User.sync().then(function() {
 		return User.create({
 			firstName: 'Donald',
 			lastName: 'Trump',
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
 			password: 'chinasux'
 		})
 	})
-	User.sync({force: true}).then(function() {
+	User.sync().then(function() {
 		return User.create({
 			firstName: 'Hillary',
 			lastName: 'Clinton',

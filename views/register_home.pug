@@ -3,7 +3,7 @@ link(rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/
 script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
 
 .container
-  form(action='../controllers/register.js', method='POST', role='form')
+  form(action='/register', method='POST', role='form')
     .row
       - var center = ['col-xs-8', 'col-xs-offset-2', 'text-center']
       div(class=center)
@@ -30,7 +30,7 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
     .row
       div(class=gridformat)
         .form-group
-          input#password(class=form_classes, type='text',
+          input#password(class=form_classes, type='password',
             name='password', placeholder='Password', tabindex='4')
     hr
     div.row

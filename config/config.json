@@ -3,7 +3,7 @@
   "development": {
     "username": "arena",
     "password": "password",
-    "database": "arena_development",
+    "database": "arena_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
@@ -17,7 +17,7 @@
   "production": {
     "username": "arena",
     "password": "password",
-    "database": "arena_production",
+    "database": "arena_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

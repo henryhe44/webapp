@@ -33,13 +33,17 @@ app.get('/register', function(req, res){
   res.render('register_home');
 })
 app.post('/register', function(req, res){
-    var user = User.create({
+  models.User.sync().then(function() {
+    return models.User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
     })
+  })
+
+  res.end("Success")
 })
 
 app.listen(8000)
