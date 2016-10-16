@@ -1,19 +1,7 @@
-var Sequelize = require('sequelize')
-var connection = new Sequelize('arena_test', 'node', 'password', {
-	host: 'localhost',
-	dialect: 'postgres'
-});
 
-connection
-  .authenticate()
-  .then(function(err) {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
-  });
+module.exports = funcction(sequelize, DataTypes){
 
-var User = connection.define('user', {
+var User = sequelize.define('user', {
 	firstName: {
 		type: Sequelize.STRING
    },
@@ -27,6 +15,12 @@ var User = connection.define('user', {
     	type: Sequelize.STRING
    }
 });
-connection.sync({
-	logging: console.log
-});
+
+
+
+}
+
+User.sync()
+
+
+
