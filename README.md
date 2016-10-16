@@ -1,13 +1,12 @@
 # Project Arena
 ProjectArena is a web application aspiring to create a social platform for gamers looking to socialize and is created in collaboration with CUNY Tech Prep!
 
-
 ###Participants: <br />
 * Ming Yang <br />
 * Henry He  <br />
 * Glyne Gittens <br />
 * Gregory Szymanski <br />
-
+<br />
 ###Resources and Guides: <br />
 [Markdown Language Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)<br />
 [A Buncha Workshops from NodeSchool](http://nodeschool.io/#workshoppers)<br />
