@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize')
-var connection = new Sequelize('arena_test', 'node', 'password', {
+var connection = new Sequelize('arena_test', 'arena', 'password', {
 	host: 'localhost',
 	dialect: 'postgres'
 });
@@ -14,19 +14,24 @@ connection
   });
 
 var User = connection.define('user', {
-	firstName: {
-		type: Sequelize.STRING
-   },
+		firstName: {
+			type: Sequelize.STRING
+   	},
     lastName: {
-         type: Sequelize.STRING
-   },
-    username: {
+      type: Sequelize.STRING
+   	},
+  	username: {
     	type: Sequelize.STRING
     },
     email: {
     	type: Sequelize.STRING
-   }
+   	},
+		password: {
+			type: Sequelize.STRING
+		}
 });
 connection.sync({
+	force: true,
 	logging: console.log
 });
+module.exports = User;
