@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models/user');
 
 router.get('/', function(req, res) {
-  res.send('This is not the home page.');
+  res.render('index/');
+})
+
+router.post('/', function(req, res){
+  
 })
 
 module.exports = router;

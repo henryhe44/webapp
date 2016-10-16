@@ -1,10 +1,10 @@
 var Sequelize = require('sequelize')
-var connection = new Sequelize('database', 'username', 'password', {
+var connection = new Sequelize('arena_test', 'node', 'password', {
 	host: 'localhost',
 	dialect: 'postgres'
 });
 
-sequelize
+connection
   .authenticate()
   .then(function(err) {
     console.log('Connection has been established successfully.');
@@ -14,7 +14,7 @@ sequelize
   });
 
 var User = connection.define('user', {
-	firstName: { 
+	firstName: {
 		type: Sequelize.STRING
    },
     lastName: {
@@ -22,10 +22,11 @@ var User = connection.define('user', {
    },
     username: {
     	type: Sequelize.STRING
-    } 
+    },
     email: {
     	type: Sequelize.STRING
-   },
-
-
+   }
+});
+connection.sync({
+	logging: console.log
 });

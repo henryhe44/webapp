@@ -5,11 +5,12 @@ const express = require('express');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
+const path  = require('path');
 
 const app = express();
 
 app.set('view engine', 'pug');
-app.set('views', `${__dirname}/views/`);
+app.set('views', path.join(__dirname, 'views'));
 // app.get('/', (req, res) => {
 //   res.send("This is the home page");
 // });
