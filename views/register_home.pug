@@ -14,23 +14,23 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
       div(class=gridformat)
         - var form_classes = ['form-control', 'input-lg']
         .form-group
-          input#firstname(class=form_classes, type='text',
+          input#firstname(class=form_classes, type='text', required='required'
             name='firstName', placeholder='First Name' tabindex='1')
       - gridformat = ['col-s-4', 'col-md-4', 'col-lg-4']
       div(class=gridformat)
         .form-group
-          input#lastname(class=form_classes, type='text',
+          input#lastname(class=form_classes, type='text', required='required',
             name='lastName' placeholder='Last Name' tabindex='2')
     .row
       - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
       div(class=gridformat)
         .form-group
-          input#email(class=form_classes, type='text',
-            name='email', placeholder='Email Address', tabindex='3')
+          input#email(class=form_classes, type='text', required='required',
+            name='email', placeholder='E-mail Address', tabindex='3')
     .row
       div(class=gridformat)
         .form-group
-          input#password(class=form_classes, type='password',
+          input#password(class=form_classes, type='password', required='required',
             name='password', placeholder='Password', tabindex='4')
     hr
     div.row
