@@ -1,9 +1,9 @@
 var express = require('express')
 var router = express.Router()
-var models = require('../../models/user')
+var models = require('../models/user')
 
 router.get('/register', function(req, res){
-  res.render('register');
+  res.render('register_home');
 })
 
 router.post('/register', function(req, res){
