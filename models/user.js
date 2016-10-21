@@ -34,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
 		})
 	})
 	User.findAll().then(function(users) {
-		console.log(users)
+		// console.log(users)
+		// Why are we doing this? lol -GG
 	})
 		return User;
 }

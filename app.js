@@ -24,27 +24,10 @@ app.use(bodyParser.json())
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
-// app.get('/', (req, res) => {
-//   res.send("This is the home page");
-// });
+
 app.use(require('./controllers/'))
 
-// app.get('/register', function(req, res){
-//   res.render('register_home');
-// })
-// app.post('/register', function(req, res){
-//   models.User.sync().then(function() {
-//     return models.User.create({
-//       firstName: req.body.firstName,
-//       lastName: req.body.lastName,
-//       username: req.body.username,
-//       email: req.body.email,
-//       password: req.body.password
-//     })
-//   })
-//
-//   res.end("Success")
-// })
+
 
 app.listen(8000)
 module.exports = app
