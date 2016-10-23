@@ -10,21 +10,19 @@ router.post('/register', function(req, res){
    models.User.sync().then(function() {
      var user = models.User.build({
        firstName: req.body.firstName,
-       lastName: req.body.lastName,
-       username: req.body.username,
-       email: req.body.email,
-       password: req.body.password
+       lastName:  req.body.lastName,
+       username:  req.body.username,
+       email:     req.body.email,
+       password:  req.body.password
      })
-     user.save()
-     .then(function() {
+     user.save().then(function() {
+       res.append('Content-Type', 'application/json')
        res.end(JSON.stringify(user))
        return JSON.stringify(user);
-     })
-     .catch(function(error) {
+     }).catch(function(error) {
        console.log(error)
      })
-
-})
+   })
 })
 
 module.exports = router;
