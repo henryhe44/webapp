@@ -12,10 +12,12 @@ router.post('/register', function(req, res){
       lastName:   req.body.lastName,
       username:   req.body.username,
       email:      req.body.email,
-      password:   req.body.password,
+      password:   req.body.password
+      /*
       overwatch:  req.body.overwatch ? true : false,
       league:     req.body.league    ? true : false,
       starcraft:  req.body.starcraft ? true : false
+      */
     })
     user.save(function(err){
         if(err){
