@@ -21,17 +21,47 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
         .form-group
           input#lastname(class=form_classes, type='text', required='required',
             name='lastName' placeholder='Last Name' tabindex='2')
+
     .row
       - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
       div(class=gridformat)
         .form-group
           input#email(class=form_classes, type='text', required='required',
             name='email', placeholder='E-mail Address', tabindex='3')
+
     .row
       div(class=gridformat)
         .form-group
           input#password(class=form_classes, type='password', required='required',
             name='password', placeholder='Password', tabindex='4')
+
+    hr
+    .row
+      div(class=gridformat)
+        p
+          span(style='font-size:2.5em; font-weight:bold') Games
+          span(style='font-size:1.5em; color:grey')  (click all that applies)
+        div.checkbox
+          label
+            input(type='checkbox' value='')
+            | Overwatch
+        div.checkbox
+          label
+            input(type='checkbox' value='')
+            | League of Legends
+        div.checkbox
+          label
+            input(type='checkbox' value='')
+            | CS:GO
+        div.checkbox
+          label
+            input(type='checkbox' value='')
+            | Starcraft 2
+        div.checkbox
+          label
+            input(type='checkbox' value='')
+            | Hearthstone
+
     hr
     div.row
       - var center_submit = ['col-xs-2', 'col-xs-offset-5', 'col-md-2', 'col-md-offset-5', 'col-lg-2', 'col-lg-offset-5']
