@@ -8,16 +8,23 @@ router.get('/register', function(req, res){
 
 router.post('/register', function(req, res){
    models.User.sync().then(function() {
-     return models.User.create({
+     var user = models.User.build({
        firstName: req.body.firstName,
        lastName: req.body.lastName,
        username: req.body.username,
        email: req.body.email,
        password: req.body.password
      })
-   })
+     user.save()
+     .then(function() {
+       res.end(JSON.stringify(user))
+       return JSON.stringify(user);
+     })
+     .catch(function(error) {
+       console.log(error)
+     })
 
-   res.end("Success")
+})
 })
 
 module.exports = router;
