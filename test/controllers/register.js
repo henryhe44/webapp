@@ -3,26 +3,15 @@ const mocha = require('mocha')
 const chaiHttp = require('chai-http')
 const express = require('express')
 
-const User = require('../../models/user')
+const model = require('../../models/')
 const server = require('../../app')
 chai.use(chaiHttp)
 
 describe('registering for an account', function(){
 
-    // Profile.collection.drop()
-
-    // beforeEach(function(done) {
-    //   var newUser = User.create({
-    //     firstName: 'Rob',
-    //     lastName: 'Swanson',
-    //     username: 'Kappa',
-    //     email: 'myemail@email.com',
-    //     password: 'password'
-    //   })
-    // })
     // afterEach(function(done) {
-    //   User.collection.drop()
-    //   done()
+    //   model.User.drop()
+    //    done()
     // })
 
     it('should add a SINGLE user on /register POST', function(done){

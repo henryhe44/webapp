@@ -15,24 +15,24 @@ module.exports = function(sequelize, DataTypes) {
 	})
 
 	// Sync and create two test users
-	User.sync().then(function() {
-		return User.create({
-			firstName: 'Donald',
-			lastName: 'Trump',
-			username: 'makemegreatagain',
-			email: 'makemegreatagain@god.com',
-			password: 'chinasux'
-		})
-	})
-	User.sync().then(function() {
-		return User.create({
-			firstName: 'Hillary',
-			lastName: 'Clinton',
-			username: 'dontvoteforcrazy',
-			email: 'imthesaneone@usa.org',
-			password: 'iwillruletheworld'
-		})
-	})
+	// User.sync().then(function() {
+	// 	return User.create({
+	// 		firstName: 'Donald',
+	// 		lastName: 'Trump',
+	// 		username: 'makemegreatagain',
+	// 		email: 'makemegreatagain@god.com',
+	// 		password: 'chinasux'
+	// 	})
+	// })
+	// User.sync().then(function() {
+	// 	return User.create({
+	// 		firstName: 'Hillary',
+	// 		lastName: 'Clinton',
+	// 		username: 'dontvoteforcrazy',
+	// 		email: 'imthesaneone@usa.org',
+	// 		password: 'iwillruletheworld'
+	// 	})
+	// })
 	User.findAll().then(function(users) {
 		// console.log(users)
 		// Why are we doing this? lol -GG
