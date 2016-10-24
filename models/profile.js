@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
 		latitude: DataTypes.INTEGER,
 		games_played: DataTypes.ARRAY(DataTypes.STRING),
     ignore_list: DataTypes.ARRAY(DataTypes.STRING),
-    friends_list DataTypes.ARRAY(DataTypes.STRING):
+    friends_list: DataTypes.ARRAY(DataTypes.STRING):
 	}, {
 		classMethods: {
 			associate: function(models) {
