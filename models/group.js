@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     description: DataTypes.TEXT,
     //Perhaps announcement should be an array?
     announcement: DataTypes.TEXT,
-    member_count: DataTypes.STRING
+    member_count: DataTypes.INTEGER
 	}, {
 		classMethods: {
 			associate: function(models) {
