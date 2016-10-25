@@ -1,37 +1,41 @@
-var Sequelize = require('sequelize')
-var connection = new Sequelize('arena_test', 'arena', 'password', {
-	host: 'localhost',
-	dialect: 'postgres'
-});
-
-connection
-  .authenticate()
-  .then(function(err) {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
-  });
-
-var User = connection.define('user', {
-		firstName: {
-			type: Sequelize.STRING
-   	},
-    lastName: {
-      type: Sequelize.STRING
-   	},
-  	username: {
-    	type: Sequelize.STRING
-    },
-    email: {
-    	type: Sequelize.STRING
-   	},
-		password: {
-			type: Sequelize.STRING
+'use strict'
+module.exports = function(sequelize, DataTypes) {
+	var User = sequelize.define('User', {
+		firstName: 	DataTypes.STRING,
+		lastName: 	DataTypes.STRING,
+		username: 	DataTypes.STRING,
+		email: 			DataTypes.STRING,
+		password: 	DataTypes.STRING
+	}, {
+		classMethods: {
+			associate: function(models) {
+				// creates associations between models
+			}
 		}
-});
-connection.sync({
-	force: true,
-	logging: console.log
-});
-module.exports = User;
+	})
+
+	// Sync and create two test users
+	// User.sync().then(function() {
+	// 	return User.create({
+	// 		firstName: 'Donald',
+	// 		lastName: 'Trump',
+	// 		username: 'makemegreatagain',
+	// 		email: 'makemegreatagain@god.com',
+	// 		password: 'chinasux'
+	// 	})
+	// })
+	// User.sync().then(function() {
+	// 	return User.create({
+	// 		firstName: 'Hillary',
+	// 		lastName: 'Clinton',
+	// 		username: 'dontvoteforcrazy',
+	// 		email: 'imthesaneone@usa.org',
+	// 		password: 'iwillruletheworld'
+	// 	})
+	// })
+	User.findAll().then(function(users) {
+		// console.log(users)
+		// Why are we doing this? lol -GG
+	})
+		return User;
+}

@@ -1,15 +1,13 @@
+// const models = require('../models/');
 const express = require('express');
-const Redirect = require('../middlewares/redirect');
+const router = express.Router();
 
-module.exports = {
-  registerRouter() {
-    const router = express.Router();
+router.get('/profile', function(req, res) {
+  res.render('profile');
+})
 
-    router.get('/', Redirect.ifNotLoggedIn(), this.index);
+router.post('/profile', function(req, res){
 
-    return router;
-  },
-  index(req, res) {
-    res.render('profile', { user: req.user, success: req.flash('success') });
-  },
-};
+})
+
+module.exports = router;

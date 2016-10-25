@@ -1,15 +1,13 @@
+// const models = require('../models/');
 const express = require('express');
+const router = express.Router();
 
-module.exports = {
-  registerRouter() {
-    const router = express.Router();
+router.get('/logout', function(req, res) {
+  res.render('logout');
+})
 
-    router.post('/', this.logout);
+router.post('/logout', function(req, res){
 
-    return router;
-  },
-  logout(req, res) {
-    req.logout();
-    res.redirect('/');
-  },
-};
+})
+
+module.exports = router;
