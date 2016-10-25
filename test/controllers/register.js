@@ -2,7 +2,6 @@ const chai = require('chai')
 const mocha = require('mocha')
 const chaiHttp = require('chai-http')
 const express = require('express')
-
 const model = require('../../models/')
 const server = require('../../app')
 chai.use(chaiHttp)
