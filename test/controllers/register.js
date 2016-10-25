@@ -9,10 +9,10 @@ chai.use(chaiHttp)
 
 describe('registering for an account', function(){
 
-    // afterEach(function(done) {
-    //   model.User.drop()
-    //    done()
-    // })
+    afterEach(function(done) {
+      model.User.drop()
+      done()
+    })
 
     it('should add a SINGLE user on /register POST', function(done){
       chai.request(server)
