@@ -18,7 +18,6 @@ router.post('/register', function(req, res){
      user.save().then(function() {
        res.append('Content-Type', 'application/json')
        res.end(JSON.stringify(user))
-       return JSON.stringify(user);
      }).catch(function(error) {
        console.log(error)
      })

@@ -23,14 +23,21 @@ include head.pug
       - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
       div(class=gridformat)
         .form-group
+          input#username(class=form_classes, type='text', required='required',
+            name='username', placeholder='Username', tabindex='3')
+
+    .row
+      - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
+      div(class=gridformat)
+        .form-group
           input#email(class=form_classes, type='text', required='required',
-            name='email', placeholder='E-mail Address', tabindex='3')
+            name='email', placeholder='E-mail Address', tabindex='4')
 
     .row
       div(class=gridformat)
         .form-group
           input#password(class=form_classes, type='password', required='required',
-            name='password', placeholder='Password', tabindex='4')
+            name='password', placeholder='Password', tabindex='5')
 
     hr
     .row
