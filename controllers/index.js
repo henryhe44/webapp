@@ -15,7 +15,7 @@ fs
   });
 
 router.get('/', function(req, res) {
-  res.render('register');
+  res.render('index/');
 })
 
 router.post('/', function(req, res){
