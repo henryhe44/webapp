@@ -1,7 +1,7 @@
 'use strict'
 module.exports = function(sequelize, DataTypes) {
 	var Game_mode = sequelize.define('Game_mode', {
-		co-op: DataTypes.STRING,
+		coop: DataTypes.STRING,
 		ladder: DataTypes.STRING,
     brawl: DataTypes.STRING,
     quick_play: DataTypes.STRING,
@@ -13,3 +13,5 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		}
 	})
+	return Game_mode;
+}
