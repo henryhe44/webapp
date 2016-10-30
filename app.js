@@ -21,10 +21,9 @@ var connection = new Sequelize("arena_test", "arena", "password", {
 app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
-
+app.use(express.static('public'))
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
-
 app.use(require('./controllers/'))
 
 

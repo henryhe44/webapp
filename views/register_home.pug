@@ -1,7 +1,4 @@
-link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-link(rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
-script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-
+include head.pug
 .container
   form(action='/register', method='POST', role='form')
     .row
@@ -21,17 +18,46 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
         .form-group
           input#lastname(class=form_classes, type='text', required='required',
             name='lastName' placeholder='Last Name' tabindex='2')
+
+    .row
+      - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
+      div(class=gridformat)
+        .form-group
+          input#username(class=form_classes, type='text', required='required',
+            name='username', placeholder='Username', tabindex='3')
+
     .row
       - gridformat = ['col-xs-8', 'col-xs-offset-8', 'col-lg-8', 'col-lg-offset-2']
       div(class=gridformat)
         .form-group
           input#email(class=form_classes, type='text', required='required',
-            name='email', placeholder='E-mail Address', tabindex='3')
+            name='email', placeholder='E-mail Address', tabindex='4')
+
     .row
       div(class=gridformat)
         .form-group
           input#password(class=form_classes, type='password', required='required',
-            name='password', placeholder='Password', tabindex='4')
+            name='password', placeholder='Password', tabindex='5')
+
+    hr
+    .row
+      div(class=gridformat)
+        p
+          span(style='font-size:2.5em; font-weight:bold') Games
+          span(style='font-size:1.5em; color:grey')  (click all that applies)
+        div.checkbox
+          label
+            input(type='checkbox' name='overwatch' value='')
+            | Overwatch
+        div.checkbox
+          label
+            input(type='checkbox' name='league' value='')
+            | League of Legends
+        div.checkbox
+          label
+            input(type='checkbox' name='starcraft' value='')
+            | Starcraft 2
+
     hr
     div.row
       - var center_submit = ['col-xs-2', 'col-xs-offset-5', 'col-md-2', 'col-md-offset-5', 'col-lg-2', 'col-lg-offset-5']

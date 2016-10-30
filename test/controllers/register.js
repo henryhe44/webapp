@@ -2,28 +2,16 @@ const chai = require('chai')
 const mocha = require('mocha')
 const chaiHttp = require('chai-http')
 const express = require('express')
-
-const User = require('../../models/user')
+const model = require('../../models/')
 const server = require('../../app')
 chai.use(chaiHttp)
 
 describe('registering for an account', function(){
 
-    // Profile.collection.drop()
-
-    // beforeEach(function(done) {
-    //   var newUser = User.create({
-    //     firstName: 'Rob',
-    //     lastName: 'Swanson',
-    //     username: 'Kappa',
-    //     email: 'myemail@email.com',
-    //     password: 'password'
-    //   })
-    // })
-    // afterEach(function(done) {
-    //   User.collection.drop()
-    //   done()
-    // })
+    afterEach(function(done) {
+      model.User.drop()
+      done()
+    })
 
     it('should add a SINGLE user on /register POST', function(done){
       chai.request(server)
@@ -39,7 +27,16 @@ describe('registering for an account', function(){
           res.should.have.status(200)
           res.should.be.json
           res.body.should.be.a('object')
-          res.body.should.have.property('SUCCESS')
+          res.body.should.have.property('firstName')
+          res.body.should.have.property('lastName')
+          res.body.should.have.property('username')
+          res.body.should.have.property('email');
+          res.body.should.have.property('password');
+          res.body.firstName.should.equal('Rob')
+          res.body.lastName.should.equal('Swanson')
+          res.body.username.should.equal('Kappa')
+          res.body.email.should.equal('myemail@email.com')
+          res.body.password.should.equal('password')
           done()
         })
     })
