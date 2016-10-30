@@ -1,11 +1,11 @@
 form #league {
-  visibility: hidden;
+  display: none;
 }
 
 form #overwatch {
-  visibility: hidden;
+  display: none;
 }
 
 form #starcraft2 {
-  visibility: hidden;
+  display: none;
 }

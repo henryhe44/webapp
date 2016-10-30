@@ -32,9 +32,9 @@ $(document).ready(function() {
       $("img#background").attr("src", leagueBg[random]);
 
       // Reveals the League form and hides all the others
-      $("form#league").css("visibility", "visible");
-      $("form#overwatch").css("visibility", "hidden");
-      $("form#starcraft2").css("visibility", "hidden");
+      $("form#league").show();
+      $("form#overwatch").hide();
+      $("form#starcraft2").hide();
     });
   $("button#overwatch").click(
     function() {
@@ -42,9 +42,9 @@ $(document).ready(function() {
       $("img#background").attr("src", overwatchBg[random]);
 
       // Reveals the Overwatch form and hides all the others
-      $("form#league").css("visibility", "hidden");
-      $("form#overwatch").css("visibility", "visible");
-      $("form#starcraft2").css("visibility", "hidden");
+      $("form#league").hide();
+      $("form#overwatch").show();
+      $("form#starcraft2").hide();
     });
   $("button#starcraft2").click(
     function() {
@@ -52,8 +52,8 @@ $(document).ready(function() {
       $("img#background").attr("src", starcraft2Bg[random]);
 
       // Reveals the Starcraft 2 form and hides all the others
-      $("form#league").css("visibility", "hidden");
-      $("form#overwatch").css("visibility", "hidden");
-      $("form#starcraft2").css("visibility", "visible");
+      $("form#league").hide();
+      $("form#overwatch").hide();
+      $("form#starcraft2").show();
     });
 });
