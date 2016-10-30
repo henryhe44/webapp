@@ -12,13 +12,13 @@ body
         div(class=offset)
         - var buttons = ['btn', 'btn-lg']
           button(class=buttons, id='league', type='button')
-            img(src='leaguelogo.jpg')
+            img(src='../public/img/leagueLogo.jpg')
         div(class=offset)
           button(class=buttons, id='overwatch', type='button')
-            img(src='overwatchlogo.jpg')
+            img(src='../public/img/overwatchLogo.jpg')
         div(class=offset)
           button(class=buttons, id='starcraft2', type='button')
-            img(src='starcraft2logo.jpg')
+            img(src='../public/img/starcraft2Logo.jpg')
 
   .container
     form(id='league', action='/home', method='POST', role='form')
@@ -39,7 +39,5 @@ body
         label
           input(type='checkbox', name='savepref', value='')
           | save preferences
-
-
 
 script(type='text/javascript' src='../public/js/home.js')
