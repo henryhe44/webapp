@@ -1,13 +1,45 @@
 include head.pug
+link(rel='stylesheet', type='text/css', href='../public/css/home.css' media='screen')
 body
   .image
-    img(src='someImg.jpg', alt = "")
-      h1 Search For Teammates
-      - var buttons = ['btn', 'btn-lg']
-      .btn-group(role='group')
-        button(class='buttons', type='button')
-          img(src='leaguelogo.jpg')
-        button(class='buttons', type='button')
-          img(src='overwatchlogo.jpg')
-        button(class='buttons', type='button')
-          img(src='starcraft2logo.jpg')
+    img(id='background', src='../public/img/defaultBackground.jpg', alt = "")
+      - var center = ['col-xs-8', 'col-xs-offset-2', 'text-center']
+      div(class=center)
+        h1 Search For Teammates
+
+      .row
+        - var offset = ['col-sm-3', 'col-sm-offset-1', 'text-center']
+        div(class=offset)
+        - var buttons = ['btn', 'btn-lg']
+          button(class=buttons, id='league', type='button')
+            img(src='leaguelogo.jpg')
+        div(class=offset)
+          button(class=buttons, id='overwatch', type='button')
+            img(src='overwatchlogo.jpg')
+        div(class=offset)
+          button(class=buttons, id='starcraft2', type='button')
+            img(src='starcraft2logo.jpg')
+
+  .container
+    form(id='league', action='/home', method='POST', role='form')
+      .checkbox
+        label
+          input(type='checkbox', name='savepref', value='')
+          | save preferences
+
+    form(id='overwatch', action='/home', method='POST', role='form')
+      .checkbox
+        label
+          input(type='checkbox', name='savepref', value='')
+          | save preferences
+
+
+    form(id='starcraft2', action='/home', method='POST', role='form')
+      .checkbox
+        label
+          input(type='checkbox', name='savepref', value='')
+          | save preferences
+
+
+
+script(type='text/javascript' src='../public/js/home.js')

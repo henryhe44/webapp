@@ -1,0 +1,11 @@
+form #league {
+  visibility: hidden;
+}
+
+form #overwatch {
+  visibility: hidden;
+}
+
+form #starcraft2 {
+  visibility: hidden;
+}
