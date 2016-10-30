@@ -1,0 +1,13 @@
+include head.pug
+body
+  .image
+    img(src='someImg.jpg', alt = "")
+      h1 Search For Teammates
+      - var buttons = ['btn', 'btn-lg']
+      .btn-group(role='group')
+        button(class='buttons', type='button')
+          img(src='leaguelogo.jpg')
+        button(class='buttons', type='button')
+          img(src='overwatchlogo.jpg')
+        button(class='buttons', type='button')
+          img(src='starcraft2logo.jpg')
