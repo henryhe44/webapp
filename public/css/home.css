@@ -1,11 +1,20 @@
-form #league {
+body {
+  background-size: 100% auto;
+}
+
+form .league {
   display: none;
 }
 
-form #overwatch {
+form .overwatch {
   display: none;
 }
 
-form #starcraft2 {
+form .starcraft2 {
   display: none;
+}
+
+button img {
+  height: 8em;
+  width: 8em;
 }
