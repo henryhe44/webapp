@@ -1,24 +1,27 @@
 include head.pug
-link(rel='stylesheet', type='text/css', href='../public/css/home.css' media='screen')
+link(rel='stylesheet', type='text/css', href='../../public/css/home.css' media='screen')
+
 body
   .image
-    img(id='background', src='../public/img/defaultBackground.jpg', alt = "")
+    img(id='background', src='../../public/img/defaultBackground.jpg', alt = "")
+
+    .row
       - var center = ['col-xs-8', 'col-xs-offset-2', 'text-center']
       div(class=center)
         h1 Search For Teammates
 
-      .row
-        - var offset = ['col-sm-3', 'col-sm-offset-1', 'text-center']
-        div(class=offset)
-        - var buttons = ['btn', 'btn-lg']
-          button(class=buttons, id='league', type='button')
-            img(src='../public/img/leagueLogo.jpg')
-        div(class=offset)
-          button(class=buttons, id='overwatch', type='button')
-            img(src='../public/img/overwatchLogo.jpg')
-        div(class=offset)
-          button(class=buttons, id='starcraft2', type='button')
-            img(src='../public/img/starcraft2Logo.jpg')
+    .row
+      - var offset = ['col-sm-3', 'col-sm-offset-1', 'text-center']
+      div(class=offset)
+      - var buttons = ['btn', 'btn-lg']
+        button(class=buttons, id='league', type='button')
+          img(src='../../public/img/leagueLogo.jpg')
+      div(class=offset)
+        button(class=buttons, id='overwatch', type='button')
+          img(src='../../public/img/overwatchLogo.jpg')
+      div(class=offset)
+        button(class=buttons, id='starcraft2', type='button')
+          img(src='../../public/img/starcraft2Logo.jpg')
 
   .container
     form(id='league', action='/home', method='POST', role='form')
