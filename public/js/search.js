@@ -50,9 +50,8 @@ $(document).ready(function() {
                               .css("width", "9em");
 
       // Reveals the League form and hides all the others
+      $("form").hide();
       $("form.league").show();
-      $("form.overwatch").hide();
-      $("form.starcraft2").hide();
     });
   $("button.overwatch").click(
     function() {
@@ -68,9 +67,8 @@ $(document).ready(function() {
                                  .css("width", "9em");
 
       // Reveals the Overwatch form and hides all the others
-      $("form.league").hide();
+      $("form").hide();
       $("form.overwatch").show();
-      $("form.starcraft2").hide();
     });
   $("button.starcraft2").click(
     function() {
@@ -86,8 +84,7 @@ $(document).ready(function() {
                                  .css("width", "9em");
 
       // Reveals the Starcraft 2 form and hides all the others
-      $("form.league").hide();
-      $("form.overwatch").hide();
+      $("form").hide();
       $("form.starcraft2").show();
     });
 })

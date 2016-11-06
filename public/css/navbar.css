@@ -1,0 +1,14 @@
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-collapse {
+  background-color: black;
+  border-style: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-family: fantasy;
+  font-size: 1.2em;
+}
