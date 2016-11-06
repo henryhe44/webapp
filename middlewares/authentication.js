@@ -5,9 +5,11 @@ const User          = require('../models').User
 
 passport.use(new LocalStrategy(
   (username, password, done) => {
+    console.log('searching')
     User.findOne({
       where: {username}
     }).then((user) => {
+      console.log("user: " + user)
       // if user isn't null, check the passwords
       if(user){
         // check passwords
