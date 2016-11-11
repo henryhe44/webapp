@@ -29,6 +29,7 @@ passport.use(new LocalStrategy(
 // Create Session Cookies
 passport.serializeUser(
   (user, done) => {
+    console.log("serializing user")
     done(null, user.id)
 })
 
@@ -36,6 +37,7 @@ passport.serializeUser(
 // Destroy Session Cookies on Logout
 passport.deserializeUser(
   (id, done) =>{
+    console.log('deserializing')
     User.findById(id,
       (err, user) => {
         done(err, user)
