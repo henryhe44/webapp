@@ -1,17 +1,18 @@
 'use strict'
 module.exports = function(sequelize, DataTypes) {
-	var Game_mode = sequelize.define('Game_mode', {
-		coop: DataTypes.STRING,
-		ladder: DataTypes.STRING,
-    brawl: DataTypes.STRING,
-    quick_play: DataTypes.STRING,
-    competitive: DataTypes.STRING
+	var User_Game_Info = sequelize.define('User_Game_Info', {
+		summary: DataTypes.TEXT,
+		rank: DataTypes.STRING,
+		attitude: DataTypes.STRING,
+		mode_name: DataTypes.ARRAY(DataTypes.STRING),
+		want_improve: DataTypes.BOOLEAN
+
 	}, {
 		classMethods: {
 			associate: function(models) {
-				// creates associations between models
+				User_Game_Info.hasMany(models.Gamer_Details);
 			}
 		}
-	})
-	return Game_mode;
-}
+	});
+	return User_Game_Info;
+};
