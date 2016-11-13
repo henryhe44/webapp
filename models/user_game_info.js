@@ -10,8 +10,7 @@ module.exports = function(sequelize, DataTypes) {
 	}, {
 		classMethods: {
 			associate: function(models) {
-				User_Game_Info.hasMany(models.Gamer_Details);
-			}
+				/*User_Game_Info.hasMany(models.Gamer_Details);*/			}
 		}
 	});
 	return User_Game_Info;
