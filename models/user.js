@@ -2,43 +2,20 @@
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define('User', {
 
-		firstName: DataTypes.STRING,
-		lastName: DataTypes.STRING,
 		username: DataTypes.STRING,
-		friends_list: DataTypes.ARRAY(DataTypes.STRING),
 		email: DataTypes.STRING,
-		password: DataTypes.STRING
+		password: DataTypes.STRING, 
+		country: DataTypes.STRING,
+		about_me: DataTypes.TEXT,
+		favored_genre: DataTypes.ARRAY(DataTypes.STRING),
+		esports_fan: DataTypes.BOOLEAN
 
-	}, {
+}, {
 		classMethods: {
 			associate: function(models) {
-				// creates associations between models
+				User.hasOne(models.Gamer_Details);
 			}
 		}
-	})
-
-	// Sync and create two test users
-	// User.sync().then(function() {
-	// 	return User.create({
-	// 		firstName: 'Donald',
-	// 		lastName: 'Trump',
-	// 		username: 'makemegreatagain',
-	// 		email: 'makemegreatagain@god.com',
-	// 		password: 'chinasux'
-	// 	})
-	// })
-	// User.sync().then(function() {
-	// 	return User.create({
-	// 		firstName: 'Hillary',
-	// 		lastName: 'Clinton',
-	// 		username: 'dontvoteforcrazy',
-	// 		email: 'imthesaneone@usa.org',
-	// 		password: 'iwillruletheworld'
-	// 	})
-	// })
-	User.findAll().then(function(users) {
-		// console.log(users)
-		// Why are we doing this? lol -GG
-	})
+	});
 		return User;
-}
+};
