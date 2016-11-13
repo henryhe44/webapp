@@ -2,13 +2,45 @@
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define('User', {
 
-		username: DataTypes.STRING,
-		email: DataTypes.STRING,
-		password: DataTypes.STRING, 
-		country: DataTypes.STRING,
-		about_me: DataTypes.TEXT,
-		favored_genre: DataTypes.ARRAY(DataTypes.STRING),
-		esports_fan: DataTypes.BOOLEAN
+		username: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				isAlphanumeric: true,
+				len:[5,20]
+			}
+		},
+		email: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				isEmail: true,
+			}
+		},
+		password: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				min: 5,
+				isAlphanumeric: true
+			}
+		}, 
+		country: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		about_me: {
+			type: DataTypes.TEXT,
+			allowNull: true
+		},
+		favored_genre: {
+			type: DataTypes.ARRAY(DataTypes.STRING),
+			allowNull: true
+		},
+		esports_fan: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false
+		}
 
 }, {
 		classMethods: {
