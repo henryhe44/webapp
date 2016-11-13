@@ -5,45 +5,40 @@ const User          = require('../models').User
 
 passport.use(new LocalStrategy(
   (username, password, done) => {
-    console.log('searching')
     User.findOne({
-      where: {username}
+      username: username
     }).then((user) => {
-      console.log("user: " + user)
-      // if user isn't null, check the passwords
-      if(user){
-        // check passwords
-        if(password !== user.password){
-          return done(null, false, {message: "Passwords do not match"})
-        }
-      }else if (user == null){
+      // user doesn't exist
+      if (!user) {
         return done(null, false, {message: "User does not exist"})
       }
-      return done(null, user, {message: "Successfully logged in"})
-
+      // user exists; check password
+      else if (user.password !== password) {
+        return done(null, false, {message: "Passwords do not match"})
+      // user exists + password is correct
+      }else {
+        return done(null, user, {message: "Successfully logged in"})
+      }
 
     })
 }))
 
-
-// Create Session Cookies
+// Saves user.id as the key to the whole user for this session
 passport.serializeUser(
   (user, done) => {
     console.log("serializing user")
     done(null, user.id)
 })
 
-
-// Destroy Session Cookies on Logout
+// Retrieves the whole user using the user.id key
 passport.deserializeUser(
   (id, done) =>{
     console.log('deserializing')
-    User.findById(id,
-      (err, user) => {
-        done(err, user)
-    })
-
-})
-
+    User.findById(id)
+      .then((user) => {
+        done(null, user)
+      })
+  }
+)
 
 module.exports = passport;
