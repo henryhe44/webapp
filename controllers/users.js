@@ -6,8 +6,8 @@ router.get('/users', (req, res) => {
     User.findAll()
         .then((users) => { 
             let all = users[0].dataValues
-            console.log(typeof(all)) 
-            res.render('users', {all})        
+            console.log(users) 
+            res.render('users', {all: users})        
         })
 })
 
