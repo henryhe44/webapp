@@ -3,7 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/profile', function(req, res) {
-  res.render('profile');
+  passport.authenticate('local', {
+    successRedirect: '/profile',
+    failureRedirect: '/login'
+  })(req, res, next)
 })
 
 router.post('/profile', function(req, res){

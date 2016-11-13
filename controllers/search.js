@@ -1,12 +1,17 @@
 var express = require('express')
 var router = express.Router()
 
-router.get('/search', function(req, res){
+router.get('/', function(req, res){
   res.render('search');
 })
 
-router.post('/search', function(req, res){
+router.post('/', function(req, res){
    // post method for the search query
+   passport.authenticate('local', {
+     // Not sure what the redirect should be yet
+     successRedirect: '/search/results',
+     failureRedirect: '/login'
+   })(req, res, next)
 })
 
 module.exports = router;
