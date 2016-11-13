@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 
-var connection = new Sequelize("arena_test", "arena", "password", {
+var connection = new Sequelize("mydb", "Greg", "pass", {
   host: "localhost",
   port: 5432,
   dialect: "postgres"
@@ -43,5 +43,10 @@ Game.hasMany(Gamer_Details);
 User_Game_Info.hasMany(Gamer_Details);
 User.hasOne(Gamer_Details);
 
-connection.sync();
+connection.sync().then(function() {
+	Game.findById(1).then(function(game){
+		console.log(game.dataValues);
+
+	});
+});
 
