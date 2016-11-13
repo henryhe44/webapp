@@ -1,11 +1,26 @@
 'use strict'
 module.exports = function(sequelize, DataTypes) {
 	var User_Game_Info = sequelize.define('User_Game_Info', {
-		summary: DataTypes.TEXT,
-		rank: DataTypes.STRING,
-		attitude: DataTypes.STRING,
-		mode_name: DataTypes.ARRAY(DataTypes.STRING),
-		want_improve: DataTypes.BOOLEAN
+		summary: {
+			type: DataTypes.TEXT,
+			allowNull: true
+		},
+		rank: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		attitude: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		mode_name: {
+			type: DataTypes.ARRAY(DataTypes.STRING),
+			allowNull: true
+		},
+		want_improve: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false
+		}
 
 	}, {
 		classMethods: {
