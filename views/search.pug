@@ -1,0 +1,46 @@
+include head.pug
+link(rel='stylesheet', type='text/css', href='/css/search.css' media='screen')
+
+body
+  .container-fluid
+    .background
+      .row#title
+        - var center = ['col-xs-8', 'col-xs-offset-2', 'text-center']
+        div(class=center)
+          h1 Search For Teammates
+
+      .row#games
+        - var offset = ['col-sm-4', 'text-center']
+        div(class=offset)
+          - var buttons = ['btn', 'btn-lg']
+          button.league(class=buttons, type='button')
+            img(src='/img/leagueLogo.jpg')
+        div(class=offset)
+          button.overwatch(class=buttons, type='button')
+            img(src='/img/overwatchLogo.jpg')
+        div(class=offset)
+          button.starcraft2(class=buttons, type='button')
+            img(src='/img/starcraft2Logo.jpg')
+
+      .row#forms
+        .col-xs-offset-2
+          form.league(action='/home', method='POST', role='form')
+            .checkbox
+              label
+                input(type='checkbox', name='savepref', value='')
+                | save preferences
+
+          form.overwatch(action='/home', method='POST', role='form')
+            .checkbox
+              label
+                input(type='checkbox', name='savepref', value='')
+                | save preferences
+
+
+          form.starcraft2(action='/home', method='POST', role='form')
+            .checkbox
+              label
+                input(type='checkbox', name='savepref', value='')
+                | save preferences
+
+script(type='text/javascript' src='/js/search.js')
