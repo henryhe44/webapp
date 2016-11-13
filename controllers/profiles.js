@@ -7,7 +7,7 @@ router.get('/profile',
   passport.authenticate('local',
     { failureRedirect: '/login' }),
   function(req, res) {
-
+    res.render('profile')
 })
 
 router.post('/profile', function(req, res){
