@@ -7,7 +7,7 @@ passport.use('local', new LocalStrategy(
   (username, password, done) => {
     console.log(username + ' ' + password)
     User.findOne({
-      username: username
+      where: { username: username }
     }).then((user) => {
       console.log(user)
       // user doesn't exist
@@ -33,7 +33,7 @@ passport.serializeUser(
 
 // Retrieves the whole user using the user.id key
 passport.deserializeUser(
-  (id, done) =>{
+  (id, done) => {
     console.log('deserializing')
     User.findById(id)
       .then((user) => {

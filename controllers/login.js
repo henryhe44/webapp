@@ -8,11 +8,17 @@ router.get('/login', function(req, res) {
   res.render('login');
 })
 
-router.post('/login', function(req, res, next){
+router.post('/login', isNotLoggedIn, function(req, res, next){
   passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
   })(req, res, next)
 })
+
+function isNotLoggedIn(req, res, next) {
+  if (req.isUnAuthenticated())
+    return next()
+  res.redirect('/profile')
+}
 
 module.exports = router;

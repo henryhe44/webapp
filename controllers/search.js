@@ -6,12 +6,14 @@ router.get('/', function(req, res){
   res.render('search');
 })
 
-router.post('/',
-  passport.authenticate('local',
-    { failureRedirect: '/login' }),
-  function(req, res){
-   // post method for the search query
-
+router.post('/', isLoggedIn, function (req, res) {
+  // post method for search queries
 })
+
+function isLoggedIn (req, res, next) {
+  if(req.isAuthenticated())
+    return next()
+  res.redirect('/login')
+}
 
 module.exports = router;

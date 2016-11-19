@@ -4,9 +4,10 @@ const router = express.Router()
 
 router.get('/logout', function(req, res) {
   // will remove the req.user property from Passport
-  req.logout((error) => {
-    res.redirect('/')
-  })
+  req.logOut()
+  req.session.destroy()
+  // redirect to the home page
+  res.redirect('/')
 })
 
 router.post('/logout', function(req, res){
