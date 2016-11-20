@@ -4,11 +4,11 @@ const router    = express.Router()
 const passport  = require('../middlewares/authentication')
 const User      = require('../models').User
 const Redirect  = require('../middlewares/redirect')
-router.get('/login', Redirect.ifNotLoggedIn,function(req, res) {
+router.get('/login', Redirect.ifLoggedIn('/profile'),function(req, res) {
   res.render('login');
 })
 
-router.post('/login', Redirect.ifNotLoggedIn, function(req, res, next){
+router.post('/login', Redirect.ifLoggedIn('/profile'), function(req, res, next){
   passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
