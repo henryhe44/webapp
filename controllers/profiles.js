@@ -1,20 +1,16 @@
 // const models = require('../models/')
-const express = require('express')
-const router = express.Router()
-const passport = require('passport')
+const express   = require('express')
+const router    = express.Router()
+const passport  = require('passport')
+const Redirect  = require('../middlewares/redirect')
 
-router.get('/profile', isLoggedIn, function(req, res) {
+router.get('/profile', Redirect.ifNotLoggedIn, function(req, res) {
     res.render('profiles')
 })
 
-router.post('/profile', isLoggedIn, function(req, res){
+router.post('/profile', Redirect.ifNotLoggedIn, function(req, res){
 
 })
 
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated())
-    return next()
-  res.redirect('/login')
-}
 
 module.exports = router;
