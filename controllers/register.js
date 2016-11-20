@@ -1,12 +1,13 @@
 var express = require('express')
 var router = express.Router()
 var models = require('../models')
+const Redirect  = require('../middlewares/redirect')
 
-router.get('/register', isNotLoggedIn,function(req, res){
+router.get('/register', Redirect.ifLoggedIn('/profile'),function(req, res){
   res.render('register_home');
 })
 
-router.post('/register', isNotLoggedIn, function(req, res){
+router.post('/register', Redirect.ifLoggedIn('/profile'), function(req, res){
    models.User.sync().then(function() {
      var user = models.User.build({
        firstName: req.body.firstName,
@@ -24,10 +25,5 @@ router.post('/register', isNotLoggedIn, function(req, res){
    })
 })
 
-function isNotLoggedIn(req, res, next) {
-  if (!req.isAuthenticated())
-    return next()
-  res.redirect('/profile')
-}
 
 module.exports = router;
