@@ -4,7 +4,7 @@ const router = express.Router()
 const passport = require('passport')
 
 router.get('/profile', isLoggedIn, function(req, res) {
-    res.render('profile')
+    res.render('profiles')
 })
 
 router.post('/profile', isLoggedIn, function(req, res){

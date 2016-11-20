@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var models = require('../models')
 
-router.get('/register', function(req, res){
+router.get('/register', isNotLoggedIn,function(req, res){
   res.render('register_home');
 })
 
@@ -25,7 +25,7 @@ router.post('/register', isNotLoggedIn, function(req, res){
 })
 
 function isNotLoggedIn(req, res, next) {
-  if (req.isUnAuthenticated())
+  if (!req.isAuthenticated())
     return next()
   res.redirect('/profile')
 }
