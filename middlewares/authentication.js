@@ -3,11 +3,13 @@ const LocalStrategy = require('passport-local').Strategy
 const User          = require('../models').User
 
 
-passport.use(new LocalStrategy(
+passport.use('local', new LocalStrategy(
   (username, password, done) => {
+    console.log(username + ' ' + password)
     User.findOne({
-      username: username
+      where: { username: username }
     }).then((user) => {
+      console.log(user)
       // user doesn't exist
       if (!user) {
         return done(null, false, {message: "User does not exist"})
@@ -31,7 +33,7 @@ passport.serializeUser(
 
 // Retrieves the whole user using the user.id key
 passport.deserializeUser(
-  (id, done) =>{
+  (id, done) => {
     console.log('deserializing')
     User.findById(id)
       .then((user) => {

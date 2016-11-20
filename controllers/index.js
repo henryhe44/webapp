@@ -14,12 +14,4 @@ fs
     router.use(require(`./${fileName}`));
   });
 
-router.get('/', function(req, res) {
-  res.render('index/');
-})
-
-router.post('/', function(req, res){
-
-})
-
 module.exports = router;

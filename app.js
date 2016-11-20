@@ -22,7 +22,7 @@ var connection = new Sequelize("arena_test", "arena", "password", {
 app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
-app.use(expressSession(({secret: 'projectArena', resave: false, saveUninitialized:true})))
+app.use(expressSession(({ secret: 'projectArena', resave: false, saveUninitialized: true })))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static('public'))
