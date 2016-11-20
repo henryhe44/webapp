@@ -8,9 +8,9 @@ const redirect = {}
 //       res.redirect(route)
 //     }
 // }
-redirect.ifNotLoggedIn = (route = '/login') =>
+redirect.ifNotLoggedIn = (route) =>
   (req, res, next) => (req.isAuthenticated() ?  next() : res.redirect(route))
 
-redirect.ifLoggedIn = (route = '/login') =>
+redirect.ifLoggedIn = (route) =>
   (req, res, next) => (req.isAuthenticated() ?  res.redirect(route) : next() )
 module.exports = redirect

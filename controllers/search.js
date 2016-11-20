@@ -7,7 +7,7 @@ router.get('/', function(req, res){
   res.render('search');
 })
 
-router.post('/', Redirect.ifNotLoggedIn, function (req, res) {
+router.post('/', Redirect.ifNotLoggedIn('/login'), function (req, res) {
   // post method for search queries
 })
 

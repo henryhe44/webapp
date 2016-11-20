@@ -4,11 +4,11 @@ const router    = express.Router()
 const passport  = require('passport')
 const Redirect  = require('../middlewares/redirect')
 
-router.get('/profile', Redirect.ifNotLoggedIn, function(req, res) {
-    res.render('profiles')
+router.get('/profile', Redirect.ifNotLoggedIn('/login'), function(req, res) {
+    res.render('profile')
 })
 
-router.post('/profile', Redirect.ifNotLoggedIn, function(req, res){
+router.post('/profile', Redirect.ifNotLoggedIn('/login'), function(req, res){
 
 })
 
