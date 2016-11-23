@@ -31,4 +31,4 @@ app.use(require('./controllers/'))
 app.listen(8000)
 module.exports = app
 
-connection.sync();
+connection.sync({force: true});
