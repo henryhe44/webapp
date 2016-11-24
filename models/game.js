@@ -15,15 +15,15 @@ module.exports = function(sequelize, DataTypes) {
 }
 
 
-User = sequelize.define('user', {})
-
-Game = sequelize.define('game', {})
-
-GamerDetails = sequelize.define('gamerDetails', {
-    attitude: DataTypes.STRING,
-		rank: DataTypes.STRING,
-
-})
-
-models.User.belongsToMany(models.Game, { through: models.GamerDetails })
-models.Game.belongsToMany(models.User, { through: models.GamerDetails })
+// User = sequelize.define('user', {})
+//
+// Game = sequelize.define('game', {})
+//
+// GamerDetails = sequelize.define('gamerDetails', {
+//     attitude: DataTypes.STRING,
+// 		rank: DataTypes.STRING,
+//
+// })
+//
+// models.User.belongsToMany(models.Game, { through: models.GamerDetails })
+// models.Game.belongsToMany(models.User, { through: models.GamerDetails })

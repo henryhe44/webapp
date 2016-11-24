@@ -23,7 +23,7 @@ router.post('/profile', function(req, res){
 
   }).catch(function() {
 
-  });
+  })
 })
 
 module.exports = router;
