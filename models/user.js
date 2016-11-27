@@ -1,4 +1,5 @@
 'use strict'
+
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define('User', {
 		username: {
@@ -25,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
 }, {
 		classMethods: {
 			associate: function(models) {
-				User.belongsToMany(Game, {through: 'GamerDetail'})
+				User.belongsToMany(models.Game, {through: 'GamerDetail'})
 			}
 		}
 	});
