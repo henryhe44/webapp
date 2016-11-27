@@ -21,7 +21,9 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.ARRAY(DataTypes.STRING),
 		},
 
-		esports_fan: DataTypes.BOOLEAN
+		esports_fan: {
+			type: DataTypes.BOOLEAN,
+		}
 
 }, {
 		classMethods: {
