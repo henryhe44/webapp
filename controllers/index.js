@@ -1,3 +1,4 @@
+'use strict'
 const models = require('../models/user');
 const express = require('express');
 const fs = require('fs');
