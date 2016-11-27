@@ -1,0 +1,46 @@
+button img {
+  height: 8em;
+  width: 8em;
+}
+
+.btn {
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+div .background {
+  transition: background-image 0.5s ease-in-out;
+  background-image: url(/img/defaultBackground.jpg);
+  background-size: cover;
+  background-color: transparent;
+
+  height: 60em;
+}
+
+form {
+  display: none;
+}
+
+#games {
+  padding-top: 7em;
+}
+
+#forms {
+  padding-top: 3em;
+  font-family: fantasy;
+  font-size: 2em;
+  color: white;
+}
+
+#title {
+  padding-top: 3em;
+}
+
+#title h1 {
+  font-family: fantasy;
+  font-size: 5em;
+  color: white;
+}

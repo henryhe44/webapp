@@ -6,19 +6,16 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		rank: { 
 			type: DataTypes.STRING,
-		}
+		},
 		attitude: {
 			type: DataTypes.STRING,
-		} 
+		}, 
 		mode_name: {
 			type: DataTypes.ARRAY(DataTypes.STRING),
-		}
-		
+		},
 		want_improve: {
 			type: DataTypes.BOOLEAN
-		}
-
-	
+		}	
 }, {
 		classMethods: {
 			associate: function(models) {
