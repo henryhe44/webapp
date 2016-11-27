@@ -7,7 +7,7 @@ router.get('/user/:id', (req, res) => {
         if(user === null){
             res.redirect('/users')
         }
-        res.render('user', {user: user})
+        res.render('user', {user: user, user_info: req.user})
     })
 
 })
