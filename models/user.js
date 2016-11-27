@@ -2,18 +2,31 @@
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define('User', {
 
-		username: DataTypes.STRING,
-		email: DataTypes.STRING,
-		password: DataTypes.STRING, 
-		country: DataTypes.STRING,
-		about_me: DataTypes.TEXT,
-		favored_genre: DataTypes.ARRAY(DataTypes.STRING),
+		username: {
+			type: DataTypes.STRING,
+		},
+		email: {
+			type: DataTypes.STRING,
+		},
+		password: {
+			type: DataTypes.STRING,
+		}, 
+		country: {
+			type: DataTypes.STRING,
+		},
+		about_me: {
+			type: DataTypes.TEXT,
+		},
+		favored_genre: {
+			type: DataTypes.ARRAY(DataTypes.STRING),
+		},
+
 		esports_fan: DataTypes.BOOLEAN
 
 }, {
 		classMethods: {
 			associate: function(models) {
-				/*User.hasOne(models.Gamer_Details);*/
+				User.belongsToMany(Game, {through: 'GamerDetail'})
 			}
 		}
 	});
