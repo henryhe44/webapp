@@ -32,7 +32,11 @@ app.use(require('./controllers/'))
 
 
 
-app.listen(8000)
+// app.listen(8000)
+
+models.sequelize.sync({force: true}).then(() => {
+  app.listen(8000);
+});
 module.exports = app
 
-connection.sync({force: true});
+// connection.sync({force: true});
