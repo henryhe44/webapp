@@ -4,7 +4,7 @@ const passport = require('passport')
 const Redirect  = require('../middlewares/redirect')
 
 router.get('/', function(req, res){
-  res.render('search');
+  res.render('search', {user_info: req.user});
 })
 
 router.post('/', Redirect.ifNotLoggedIn('/login'), function (req, res) {

@@ -4,8 +4,9 @@ const models    = require('../models')
 const passport  = require('passport')
 const Redirect  = require('../middlewares/redirect')
 
+
 router.get('/register', Redirect.ifLoggedIn('/profile'), function(req, res){
-  res.render('register');
+  res.render('register', {user_info: req.user});
 })
 
 router.post('/register', Redirect.ifLoggedIn('/profile'), function(req, res, next){

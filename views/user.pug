@@ -1,9 +1,12 @@
-include head.pug
-link(rel='stylesheet', type='text/css', href='/css/users.css' media='screen')
-
-.container
-    .user.col-md-4.col-md-offset-3.border
-        p ID:           #{all.dataValues.id}
-        p First Name:   #{all.dataValues.firstName}
-        p Last Name:    #{all.dataValues.lastName}
-        p Username:     #{all.dataValues.username}
+//- include head.pug
+//- link(rel='stylesheet', type='text/css', href='/css/users.css' media='screen')
+extends layout
+block styles
+  link(rel='stylesheet', type='text/css', href='/css/users.css' media='screen')
+block content
+  .container
+      .user.col-md-4.col-md-offset-3.border
+          p ID:           #{user.dataValues.id}
+          p First Name:   #{user.dataValues.firstName}
+          p Last Name:    #{user.dataValues.lastName}
+          p Username:     #{user.dataValues.username}
