@@ -11,8 +11,8 @@ router.get('/register', Redirect.ifLoggedIn('/profile'),function(req, res){
 router.post('/register', Redirect.ifLoggedIn('/profile'), function(req, res){
    models.User.sync().then(function() {
      var user = models.User.build({
-       firstName: req.body.firstName,
-       lastName:  req.body.lastName,
+       first_name: req.body.first_name,
+       last_name:  req.body.last_name,
        username:  req.body.username,
        email:     req.body.email,
        password:  req.body.password

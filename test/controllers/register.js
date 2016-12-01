@@ -17,8 +17,8 @@ describe('registering for an account', function(){
       chai.request(server)
         .post('/register')
         .send({
-          firstName: 'Rob',
-          lastName: 'Swanson',
+          first_name: 'Rob',
+          last_name: 'Swanson',
           username: 'Kappa',
           email: 'myemail@email.com',
           password: 'password'
@@ -27,13 +27,13 @@ describe('registering for an account', function(){
           res.should.have.status(200)
           res.should.be.json
           res.body.should.be.a('object')
-          res.body.should.have.property('firstName')
-          res.body.should.have.property('lastName')
+          res.body.should.have.property('first_name')
+          res.body.should.have.property('last_name')
           res.body.should.have.property('username')
           res.body.should.have.property('email');
           res.body.should.have.property('password');
-          res.body.firstName.should.equal('Rob')
-          res.body.lastName.should.equal('Swanson')
+          res.body.first_name.should.equal('Rob')
+          res.body.last_name.should.equal('Swanson')
           res.body.username.should.equal('Kappa')
           res.body.email.should.equal('myemail@email.com')
           res.body.password.should.equal('password')
