@@ -8,10 +8,10 @@ router.get('/user/:id', (req, res) => {
         if(user === null){
             res.redirect('/users')
         }
-        res.render('user', {all: user})    
+        res.render('user', {user: user, user_info: req.user})
     })
-    
+
 })
 
 
-module.exports = router 
+module.exports = router

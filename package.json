@@ -20,7 +20,7 @@
     "url": "https://github.com/ProjectArena/webapp/issues"
   },
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt": "^0.8.7",
     "body-parser": "1.15.2",
     "connect-flash": "0.1.1",
     "cookie-parser": "1.4.3",

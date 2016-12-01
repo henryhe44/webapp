@@ -8,7 +8,7 @@ router.get('/users', (req, res) => {
         .then((users) => { 
             let all = users[0].dataValues
             console.log(users) 
-            res.render('users', {all: users})        
+            res.render('users', {user: users, user_info: req.user})        
         })
 })
 
