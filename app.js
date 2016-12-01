@@ -12,7 +12,7 @@ const User        = require('./models/user.js')
 const models      = require('./models/')
 const Sequelize   = require('sequelize')
 const passport    = require('./middlewares/authentication')
-
+const seed        = require('./config/seed')
 var connection = new Sequelize("arena_test", "arena", "password", {
   host: "localhost",
   port: 5432,
@@ -35,7 +35,11 @@ app.use(require('./controllers/'))
 
 // app.listen(8000)
 
-models.sequelize.sync({force: true}).then(() => {
+models.sequelize.sync({force: true})
+.then(() =>{
+  seed(10) // The arg is the number of accounts you want to create
+})
+.then(() => {
   app.listen(8000);
 });
 module.exports = app
