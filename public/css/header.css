@@ -1,3 +1,9 @@
+/* Alters contents of the words inside each button of the navbar */
+.nav>li>a {
+  font-size: 1.2em;
+  font-family: fantasy;
+}
+
 .site-nav {
   height: 5em;
   width: 100%;
@@ -41,8 +47,9 @@ ul.topnav li a:hover {background-color: #555;}
 ul.topnav li.icon {display: none;}
 
 .navbar-default {
+  margin-bottom: 0px;
     background-color: #f8f8f8;
-    border-color: #f8f8f8; 
+    border-color: #f8f8f8;
         /* background-image: -webkit-linear-gradient(top,#fff 0,#f8f8f8 100%); */
     background-image: none;
     /* background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f8f8f8)); */
@@ -52,7 +59,7 @@ ul.topnav li.icon {display: none;}
     background-repeat: repeat-x;
     border-radius: 4px;
     -webkit-box-shadow: none !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
 }
 
 #header_background {
