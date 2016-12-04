@@ -1,1 +1,20 @@
 .container-fluid
+  .background
+    .row
+      .col-xs-4.col-xs-offset-1.col-lg-3.col-lg-offset-2
+        button.btn
+          img(src='/img/defaultProfile.jpg')
+      .col-xs-7
+        p#username #{user.dataValues.username}
+        if user.dataValues.about_me
+          p#aboutme #{user.dataValues.about_me}
+    .row
+      .col-lg-2.col-lg-offset-2
+        button.league.btn.btn-lg
+          img(src='/img/leagueLogo.jpg')
+      .col-lg-2.col-lg-offset-1
+        button.overwatch.btn.btn-lg
+          img(src='/img/overwatchLogo.jpg')
+      .col-lg-2.col-lg-offset-1
+        button.starcraft2.btn.btn-lg
+          img(src='/img/starcraft2Logo.jpg')

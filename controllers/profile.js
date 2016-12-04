@@ -20,7 +20,7 @@ router.get('/profile/:id', Redirect.ifNotLoggedIn('/login'), (req, res) => {
     // If it does not exist, redirect to a 404 page with the error
     if (user === null) {
       let error = "Profile does not exist"
-      res.redirect('/404', {error: error, user_info: req.user})
+      res.redirect('/404')
     }
 
     // Find the games associated with this user
