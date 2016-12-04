@@ -14,19 +14,17 @@
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
 
         ul.nav.navbar-nav.navbar-right
-          li.login
-            a(href='/').btn Home
           li.users
             a(href='/users').btn Users
           li.search
             a(href='/').btn Search
-          li.profile
-            a(href='/profile').btn Profile
-          if loggedIn 
+          if loggedIn
+            li.profile
+              a(href='/profile').btn Profile
             li.logout
               a(href='/logout').btn Logout
           else
             li.login
-              a(href='/register').btn Sign Up
+              a(href='/register').btn Register
             li.login
               a(href='/login').btn Login
