@@ -1,12 +1,15 @@
 "use strict";
 let faker = require('faker')
 let User = require('../models').User
-
+let Game = require('../models').Game
+let Games = ['Overwatch', 'Starcraft','League of Legends']
 
 User.sync().then()
 
 module.exports = 
     function(seed_amt){
+
+        // Game.sync().then
         for(let i = 0; i < seed_amt; i++){
             User.sync().then(
                 () => {
