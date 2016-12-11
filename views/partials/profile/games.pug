@@ -1,5 +1,16 @@
 .container-fluid
-  .row
+  .row#space
+    .col-lg-8.col-lg-offset-2.league
+      p IGN: Bobby Flay
+      if games.dataValues.rank
+        p Rating: #{games.dataValues.rank}
+      if games.dataValues.attitude
+        p Attitude: #{games.dataValues.attitude}
+      if games.dataValues.mode_name
+        - var game_modes = ''
+        each mode in games.dataValues.mode_name
+          - game_modes = game_modes + mode + ' '
+        p Loves to play: #{game_modes}
 
 
 script(type='text/javascript' src='/js/profile.js')

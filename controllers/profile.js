@@ -25,6 +25,15 @@ router.get('/profile/:id', Redirect.ifNotLoggedIn('/login'), (req, res) => {
 
     // Find the games associated with this user
     models.GamerDetail.findAllGames(req.params.id).then((games) => {
+      console.log(games)
+      let overwatch
+      let league
+      let starcraft2
+
+      for (var i = 0; i < games.length; i++) {
+        switch(games[i].dataValues.GameId):
+          overwatch
+      }
       res.render('profile', {user: user, games: games, user_info: req.user})
     })
   })

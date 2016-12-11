@@ -47,7 +47,7 @@ ul.topnav li a:hover {background-color: #555;}
 ul.topnav li.icon {display: none;}
 
 .navbar-default {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
     background-color: #f8f8f8;
     border-color: #f8f8f8;
         /* background-image: -webkit-linear-gradient(top,#fff 0,#f8f8f8 100%); */

@@ -4,6 +4,9 @@ module.exports = function(sequelize, DataTypes) {
 		summary: {
 			type: DataTypes.TEXT,
 		},
+		in_game_name: {
+			type: DataTypes.STRING,
+		},
 		rank: {
 			type: DataTypes.STRING,
 		},
